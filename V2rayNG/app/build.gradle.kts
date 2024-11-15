@@ -10,7 +10,7 @@ android {
     defaultConfig {
         applicationId = "com.v2ray.ang"
         minSdk = 21
-        targetSdk = 35
+        targetSdk = 34
         versionCode = 612
         versionName = "1.9.16"
         multiDexEnabled = true
@@ -27,6 +27,9 @@ android {
             }
         }
 
+        ndk {
+            abiFilters.addAll(listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64"))
+        }
     }
 
     compileOptions {
@@ -46,7 +49,8 @@ android {
 
     sourceSets {
         getByName("main") {
-            jniLibs.srcDirs("libs")
+            jniLibs.srcDirs("libs", "src/main/libs")
+            assets.srcDirs("src/main/assets")
         }
     }
 
@@ -86,6 +90,8 @@ android {
             useLegacyPackaging = true
         }
     }
+
+    ndkVersion = "25.2.9519653"
 }
 
 dependencies {
@@ -131,4 +137,7 @@ dependencies {
     implementation(libs.core)
     implementation(libs.work.runtime.ktx)
     implementation(libs.work.multiprocess)
+    implementation("androidx.preference:preference-ktx:1.2.1")
+
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.so", "*.aar"))))
 }

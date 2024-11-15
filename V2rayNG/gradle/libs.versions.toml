@@ -25,9 +25,10 @@ rxpermissions = "0.12"
 toastcompat = "1.1.0"
 viewpager2 = "1.1.0"
 workRuntimeKtx = "2.9.1"
-androidGradlePlugin = "8.7.2"
+agp = "8.1.2"
 androidKotlinPlugin = "2.0.21"
 mockitoMockitoInline = "4.0.0"
+v2ray = "4.45.2"
 
 [libraries]
 activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
@@ -64,8 +65,9 @@ work-multiprocess = { module = "androidx.work:work-multiprocess", version.ref = 
 work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workRuntimeKtx" }
 mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockitoMockitoInline" }
 org-mockito-mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockitoMockitoInline" }
+v2ray-core = { module = "com.github.2dust:v2ray-core", version.ref = "v2ray" }
 
 [plugins]
-android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
-android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 android-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "androidKotlinPlugin" }
